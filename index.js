@@ -30,7 +30,7 @@ app.use(
         secret: "user",
         saveUninitialized: false,
         cookie: {
-            sameSite: "none"
+            sameSite: 'none',
             maxAge: null
         },
     })
