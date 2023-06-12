@@ -30,14 +30,11 @@ app.use(
         secret: "user",
         saveUninitialized: false,
         cookie: {
+            sameSite: "none"
             maxAge: null
         },
     })
 );
-
-if (process.env.NODE_ENV !== "production") {
-    require("dotenv").config()
-  }
 
 // Peut etre ajouter un peu partout conn.connect() suivi de conn.end() pour assurer l'ouverture et fermeture de la BD
 
