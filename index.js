@@ -27,9 +27,12 @@ app.use(
     session({
         key: "LaBambaTriste",
         resave: true,
+        proxy: true,
         secret: "user",
-        saveUninitialized: false,
+        saveUninitialized: true,
         cookie: {
+            secure: true,
+            sameSite: "none",
             maxAge: null
         },
     })
