@@ -26,7 +26,7 @@ app.use(
 app.use(
     session({
         key: "LaBambaTriste",
-        resave: false,
+        resave: true,
         secret: "user",
         saveUninitialized: false,
         cookie: {
