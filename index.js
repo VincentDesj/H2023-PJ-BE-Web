@@ -65,7 +65,7 @@ app.post('/login', (req, res) => {
     const motDePasse = req.body.motDePasse;
     const captchaText = req.body.captcha;
 
-    //if (req.session.captcha === captchaText) {
+    if (req.session.captcha === captchaText) {
         if (validation.courriel(courriel, res)) {
             conn.connect(function (err) {
                 if (err) {
@@ -96,9 +96,9 @@ app.post('/login', (req, res) => {
                 );
             });
         }
-    /*} else {
+    } else {
         res.send({ message: "Le Captcha n'est pas valide." });
-    }*/
+    }
 });
 
 // app.post(/login): Connection a la platforme mobile
