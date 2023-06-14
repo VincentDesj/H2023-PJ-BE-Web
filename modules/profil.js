@@ -142,7 +142,7 @@ module.exports = function (app) {
 
         if (req.session.user) {
             let courrielMinuscule = courriel.toLowerCase();
-            if (validation.courriel(courcourrielMinusculeriel, res)) {
+            if (validation.courriel(courrielMinuscule, res)) {
                 if (Object.keys(nom).length > 0 && noRegistre != null) {
                     let query1 = "SELECT noRegistre_compagnie FROM compagnie WHERE id_utilisateur = ?";
                     let compagnie = [
