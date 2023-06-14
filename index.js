@@ -38,7 +38,15 @@ app.use(
     })
 );
 
-// Peut etre ajouter un peu partout conn.connect() suivi de conn.end() pour assurer l'ouverture et fermeture de la BD
+// Ajout de Content-Security-Policy
+app.use((req, res, next) => {
+    res.setHeader(
+        'Content-Security-Policy',
+        "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; frame-src 'self'; frame-ancestor 'none'"
+    );
+
+    next();
+});
 
 // app.get(/login):
 app.get('/login', (req, res) => {
